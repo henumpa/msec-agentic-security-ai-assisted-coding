@@ -5,7 +5,9 @@ your AI coding agent (GitHub Copilot CLI, Copilot in your IDE, etc.) throughout.
 We are interested in *how you direct the agent* and *how you reason about the
 code*, not in whether you can type the fix from memory.
 
-**Time:** ~30–45 minutes for the core task. The bonus is a stretch goal.
+**Time:** ~30–45 minutes for Part 1.
+
+**Both Part 1 and Part 2 are required.**
 
 ---
 
@@ -25,7 +27,7 @@ simulators expose the same method shapes as the real SDKs (`createItem`,
 of the process. **Do not** replace them with real Azure services — keep using the
 simulators.
 
-## Your task
+## Part 1 — fix the failing behaviours
 
 The service already builds and runs, but **its test suite is failing.** Each
 failing test documents a behaviour the service is *supposed* to have but
@@ -50,12 +52,12 @@ output to localise each problem.
 | `POST /products` | Create a product `{name, category, price, stock}` |
 | `PUT /products/{id}` | Update a product |
 | `DELETE /products/{id}` | Delete a product |
-| `POST /products/{id}/image` | **Bonus** — attach an image |
+| `POST /products/{id}/image` | **Part 2** — attach an image |
 
 The store is seeded on startup with 12 products in category `demo`
 (`demo-1` … `demo-12`).
 
-## Bonus (stretch) — image upload, end-to-end
+## Part 2 — image upload, end-to-end
 
 Implement `POST /products/{id}/image`. This must work **end-to-end across the
 service and the simulated backend**:
@@ -66,7 +68,7 @@ service and the simulated backend**:
 4. Publish an **`ImageAdded`** event onto the **simulated Queue**.
 5. Return the updated product.
 
-There are two bonus tests describing exactly this contract.
+There are two tests describing exactly this contract. Both must pass.
 
 ---
 
